@@ -12,4 +12,4 @@ Requirements
 Creation from scratch
 ---------------------
 
-In tools folder, you can see the createUniversalREST.sh script, that will create a webapp maven application from scratch.
+In *tools* folder, you can see the createUniversalREST.sh script, that will create a webapp maven application from scratch.
