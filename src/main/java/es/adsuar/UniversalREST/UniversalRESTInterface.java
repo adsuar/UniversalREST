@@ -12,6 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import es.adsuar.UniversalREST.pojo.ClassificationPOJO;
+import es.adsuar.UniversalREST.pojo.DataPOJO;
 
 
 /**
@@ -33,8 +34,7 @@ public class UniversalRESTInterface {
 	@Path("/test")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String test() {
-		System.out.println("TEST");
-		return "QQ";
+		return "Welcome to my new Jersey RESTful Web Application!";
 	}
 
 	/**
@@ -46,14 +46,11 @@ public class UniversalRESTInterface {
 	@GET
 	@Path("/classify/{classify}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public ClassificationPOJO classify(@PathParam("classify") Integer classify) {
+	public DataPOJO classify(@PathParam("classify") Integer classify) {
 		
-		ClassificationPOJO cpojo = map.get(classify);
+		DataPOJO dp = DataClassified.getInstance().getData(classify);
 		
-		if(cpojo == null)
-			cpojo = new ClassificationPOJO(0);
-
-		return cpojo;
+		return dp;
 	}
 
 	/**
@@ -66,12 +63,10 @@ public class UniversalRESTInterface {
 	@Path("/create")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.APPLICATION_JSON)
-	public ClassificationPOJO create(@FormParam("object") String object) {
+	public DataPOJO create(@FormParam("object") String object) {
 		valor = Integer.valueOf(object);
 
-		ClassificationPOJO cpojo = new ClassificationPOJO(valor);
-		
-		map.put(valor, cpojo);
+		DataPOJO cpojo = DataClassified.getInstance().setData(valor);
 		
 		return cpojo;
 	}
