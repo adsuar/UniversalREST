@@ -40,6 +40,7 @@ body {
 			<h2>Jersey RESTful Web Application!</h2>
 		</div>
 	</div>
+	<!-- This welcome message is loaded at ng-init, when we call to the UniversalREST/urinterface/test WS -->
 	<div class="row">
 		<div class="span12 center-block">
 			<p>
@@ -50,10 +51,11 @@ body {
 
 	<div class="tab-content well">
 		<div class="tab-pane active" id="home">
-			You can select the following options:
+			You can select one of the following options:
 			<ul>
-				<li>Classify a new index (with a POST method)</li>
-				<li>Classify an old index (with a GET method)</li>
+				<li>Classify a new index (with a POST method).</li>
+				<li>Classify an old index (with a GET method).</li>
+				<li>List all the indexes available with their class.</li>
 			</ul>
 		</div>
 		<div class="tab-pane" id="POST">
