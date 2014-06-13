@@ -55,3 +55,4 @@ I've used the following features:
 - The grid system although the project is so tiny that we can't see the great power of this tool to organize the screen.
 - Popovers: when you put the mouse over the header of the *List of indexes registered* you'll see a kind of tooltip (more powerful) with information related to such text.
 - Accordion and Collapse: two different ways of showing the data to the user.
+- Carousel: I've made some tests with the Carousel of images.

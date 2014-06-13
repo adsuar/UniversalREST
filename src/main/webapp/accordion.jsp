@@ -7,8 +7,7 @@
 <script src="js/custom.js"></script>
 <!--<script
 	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  -->
-<script
-	src="js/jquery-2.1.1.js"></script>
+<script src="js/jquery-2.1.1.js"></script>
 
 <!-- Le styles -->
 <link href="js/bootstrap/bootstrap.css" rel="stylesheet">
@@ -140,48 +139,93 @@ body {
 
 				</div>
 			</div>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse"
+						data-parent="#accordion" href="#collapseFour"> Musical Carousel. </a>
+				</div>
+				<div id="collapseFour" class="accordion-body collapse in">
+					<div class="accordion-inner">
+						<div class="row">
+							<div class="span6 offset4 center-block">
+								<div id="musicalCarousel" class="carousel slide">
+									<div class="carousel-inner center-block">
+										<div class="item active center-block">
+											<img src="img/music/Beatles.jpg" alt=""
+												style="width: 640px; height: 480px">
+											<div class="carousel-caption">
+												<h4>Beatles Simpsonized</h4>
+												<p>The famous picture at Abbey Road, Simpsonized.</p>
+											</div>
+										</div>
+										<div class="item center-block">
+											<img src="img/music/Nirvana.jpg" alt=""
+												style="width: 640px; height: 480px">
+											<div class="carousel-caption">
+												<h4>Nirvana Simpsonized</h4>
+												<p>Bart in the pool.</p>
+											</div>
+										</div>
+										<div class="item center-block">
+											<img src="img/music/Queen.jpg" alt=""
+												style="width: 640px; height: 480px">
+											<div class="carousel-caption">
+												<h4>Queen Simpsonized.</h4>
+												<p>Live at Simpsons.</p>
+											</div>
+										</div>
+									</div>
+									<a class="left carousel-control" href="#musicalCarousel"
+										data-slide="prev">&lsaquo;</a> <a
+										class="right carousel-control" href="#musicalCarousel"
+										data-slide="next">&rsaquo;</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
 
-	<script>
-		$(function() {
-			$('#index')
-					.popover(
-							{
-								title : 'Index',
-								content : 'Index that has been introduced at the system and classified.',
-								offset : 10
-							});
-		});
-		$(function() {
-			$('#class').popover({
-				title : 'Class',
-				content : 'Class to which the index belongs to.',
-				offset : 10
+
+		<script>
+			$(function() {
+				$('#index')
+						.popover(
+								{
+									title : 'Index',
+									content : 'Index that has been introduced at the system and classified.',
+									offset : 10
+								});
 			});
-		});
-	</script>
+			$(function() {
+				$('#class').popover({
+					title : 'Class',
+					content : 'Class to which the index belongs to.',
+					offset : 10
+				});
+			});
+		</script>
 
 
-	<!-- Le javascript -->
-	<!-- Placed at the end of the document so the pages load faster -->
+		<!-- Le javascript -->
+		<!-- Placed at the end of the document so the pages load faster -->
 
-	<script src="js/bootstrap/bootstrap-alert.js"></script>
-	<script src="js/bootstrap/bootstrap-modal.js"></script>
-	<script src="js/bootstrap/bootstrap-dropdown.js"></script>
-	<script src="js/bootstrap/bootstrap-scrollspy.js"></script>
-	<script src="js/bootstrap/bootstrap-tab.js"></script>
-	<script src="js/bootstrap/bootstrap-tooltip.js"></script>
-	<script src="js/bootstrap/bootstrap-popover.js"></script>
-	<script src="js/bootstrap/bootstrap-button.js"></script>
-	<script src="js/bootstrap/bootstrap-collapse.js"></script>
-	<script src="js/bootstrap/bootstrap-carousel.js"></script>
-	<script src="js/bootstrap/bootstrap-typeahead.js"></script>
+		<script src="js/bootstrap/bootstrap-alert.js"></script>
+		<script src="js/bootstrap/bootstrap-modal.js"></script>
+		<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+		<script src="js/bootstrap/bootstrap-scrollspy.js"></script>
+		<script src="js/bootstrap/bootstrap-tab.js"></script>
+		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+		<script src="js/bootstrap/bootstrap-popover.js"></script>
+		<script src="js/bootstrap/bootstrap-button.js"></script>
+		<script src="js/bootstrap/bootstrap-collapse.js"></script>
+		<script src="js/bootstrap/bootstrap-carousel.js"></script>
+		<script src="js/bootstrap/bootstrap-typeahead.js"></script>
 
-	<!-- Activate the Bootstrap action that collapses the accordion. -->
-	<script>
-		$(".collapse").collapse()
-	</script>
-
+		<!-- Activate the Bootstrap action that collapses the accordion. -->
+		<script>
+			$(".collapse").collapse()
+		</script>
 </body>
 </html>

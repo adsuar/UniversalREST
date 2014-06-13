@@ -26,8 +26,9 @@ body {
 				index</a></li>
 		<li><a href="#GET" data-toggle="tab">GET: Classify an
 				existing index</a></li>
-		<li><a id="listIndexes" href="#LIST" data-toggle="tab">List
-				of the indexes registered</a></li>
+		<li><a href="#LIST" data-toggle="tab">List of the indexes
+				registered</a></li>
+		<li><a href="#CAROUSEL" data-toggle="tab">Musical Carousel</a></li>
 	</ul>
 
 	<div class="row">
@@ -125,6 +126,43 @@ body {
 			<div class="alert">
 				<a class="close" data-dismiss="alert">X</a> <strong>Warning!</strong>
 				Once you refresh the window all data will disappear.
+			</div>
+		</div>
+		<div class="tab-pane" id="CAROUSEL">
+			<div class="row">
+				<div class="span6 offset4 center-block">
+					<div id="musicalCarousel" class="carousel slide">
+						<div class="carousel-inner center-block">
+							<div class="item active center-block">
+								<img src="img/music/Beatles.jpg" alt=""
+									style="width: 640px; height: 480px">
+								<div class="carousel-caption">
+									<h4>Beatles Simpsonized</h4>
+									<p>The famous picture at Abbey Road, Simpsonized.</p>
+								</div>
+							</div>
+							<div class="item center-block">
+								<img src="img/music/Nirvana.jpg" alt=""
+									style="width: 640px; height: 480px">
+								<div class="carousel-caption">
+									<h4>Nirvana Simpsonized</h4>
+									<p>Bart in the pool.</p>
+								</div>
+							</div>
+							<div class="item center-block">
+								<img src="img/music/Queen.jpg" alt=""
+									style="width: 640px; height: 480px">
+								<div class="carousel-caption">
+									<h4>Queen Simpsonized.</h4>
+									<p>Live at Simpsons.</p>
+								</div>
+							</div>
+						</div>
+						<a class="left carousel-control" href="#musicalCarousel"
+							data-slide="prev">&lsaquo;</a> <a class="right carousel-control"
+							href="#musicalCarousel" data-slide="next">&rsaquo;</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
