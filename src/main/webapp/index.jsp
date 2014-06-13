@@ -7,8 +7,7 @@
 <script src="js/custom.js"></script>
 <!--<script
 	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  -->
-<script
-	src="js/jquery-2.1.1.js"></script>
+<script src="js/jquery-2.1.1.js"></script>
 <!-- Le styles -->
 <link href="js/bootstrap/bootstrap.css" rel="stylesheet">
 <style type="text/css">
@@ -21,6 +20,16 @@ body {
 
 </head>
 <body ng-controller="controller" ng-init="hello()">
+	<ul class="nav nav-tabs navbar-fixed-top">
+		<li><a href="#home" data-toggle="tab">Home</a></li>
+		<li><a href="#POST" data-toggle="tab">POST: Classify a new
+				index</a></li>
+		<li><a href="#GET" data-toggle="tab">GET: Classify an
+				existing index</a></li>
+		<li><a id="listIndexes" href="#LIST" data-toggle="tab">List
+				of the indexes registered</a></li>
+	</ul>
+
 	<div class="row">
 		<div class="span12 center-block">
 			<h1>UNIVERSAL DIAGNOSTICS</h1>
@@ -39,17 +48,7 @@ body {
 		</div>
 	</div>
 
-	<ul class="nav nav-tabs">
-		<li><a href="#home" data-toggle="tab">Home</a></li>
-		<li><a href="#POST" data-toggle="tab">POST: Classify a new
-				index</a></li>
-		<li><a href="#GET" data-toggle="tab">GET: Classify an
-				existing index</a></li>
-		<li><a id="listIndexes" href="#LIST" data-toggle="tab">List
-				of the indexes registered</a></li>
-	</ul>
-
-	<div class="tab-content">
+	<div class="tab-content well">
 		<div class="tab-pane active" id="home">
 			You can select the following options:
 			<ul>

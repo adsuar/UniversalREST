@@ -103,7 +103,7 @@ app
 												$scope.classified = data.keyClass.classification;
 											}
 										}).error(function(data) {
-									alert("ERROR");
+									alert("ERROR: Take a look at the key. Remember that it has to be an integer.");
 									console.log('Error: ' + data);
 								});
 					};
@@ -122,7 +122,7 @@ app
 												// Since the key hasn't been
 												// classified yet, we return
 												// an error.
-												alert("ERROR");
+												alert("ERROR: Take a look at the key. Remember that it has to be an integer.");
 												console.log('Error: ' + data);
 											} else {
 												$scope.createdkey = data.key;
@@ -148,7 +148,7 @@ app
 												}
 											}
 										}).error(function(data) {
-									alert("ERROR");
+									alert("ERROR: Take a look at the key. Remember that it has to be an integer.");
 									console.log('Error: ' + data);
 								});
 					};
