@@ -15,8 +15,8 @@ Creation from scratch
 
 In *tools* folder, you can see the createUniversalREST.sh script, that will create a webapp maven application from scratch.
 
-Execution
----------
+Compilation and Deployment
+--------------------------
 
 You have to follow the next steps:
 - mvn clean package
