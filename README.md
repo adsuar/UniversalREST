@@ -34,6 +34,8 @@ Features
 RESTFul API
 -----------
 
+I've developed my RESTFul API using Jersey and Jackson so the conversion from Java Objects to JSON ones will be done automatically.
+
 I've developed three different services:
 - UniversalREST/urinterface/test, a GET service that returns a welcome message.
 - UniversalREST/urinterface/classify, a GET service that gets the classify parameter (an integer) and returns the class it's supposed to match with it.

@@ -2,6 +2,15 @@ package es.adsuar.UniversalREST.pojo;
 
 import java.util.Random;
 
+/**
+ * POJO class that stores the data of an object. Since the class is build in the
+ * POJO way, the object will be serialized by Jackson into a JSON object
+ * automatically.
+ * 
+ * @author Antonio Jesús Adsuar Gómez
+ * 
+ */
+
 public class DataPOJO {
 	/**
 	 * Key that identifies the data.
@@ -12,11 +21,20 @@ public class DataPOJO {
 	 */
 	ClassificationPOJO keyClass;
 
+	/**
+	 * Class constructor.
+	 */
 	public DataPOJO() {
 		this.key = null;
 		this.keyClass = null;
 	}
 
+	/**
+	 * Class constructor.
+	 * 
+	 * @param key
+	 *            Key of the object.
+	 */
 	public DataPOJO(Integer key) {
 		super();
 		this.key = key;
@@ -25,10 +43,21 @@ public class DataPOJO {
 		this.keyClass = new ClassificationPOJO(value);
 	}
 
+	/**
+	 * Method that gets the key of an object.
+	 * 
+	 * @return Key value.
+	 */
 	public Integer getKey() {
 		return key;
 	}
 
+	/**
+	 * Method that instantiates the key of the object.
+	 * 
+	 * @param key
+	 *            Value.
+	 */
 	public void setKey(Integer key) {
 		this.key = key;
 
@@ -41,10 +70,21 @@ public class DataPOJO {
 			this.keyClass = new ClassificationPOJO(value);
 	}
 
+	/**
+	 * Method that gets the class the object belongs to.
+	 * 
+	 * @return Class.
+	 */
 	public ClassificationPOJO getKeyClass() {
 		return keyClass;
 	}
 
+	/**
+	 * Method that instantiates the class the object belongs to.
+	 * 
+	 * @param keyClass
+	 *            Class.
+	 */
 	public void setKeyClass(ClassificationPOJO keyClass) {
 		this.keyClass = keyClass;
 	}
