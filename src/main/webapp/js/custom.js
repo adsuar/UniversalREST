@@ -1,3 +1,9 @@
+// File that includes my controller definition for the AngularJS MVC model.
+
+// It has two different parts:
+// a) A patch so AngularJS $http service behaves like jQuery.ajax(). Thus, we can use the post method without any problem.
+// b) Controller: that allow us to execute call to our RESTful interface and collect the results.
+
 var app = angular
 		.module(
 				'universalrest',
@@ -64,6 +70,7 @@ app
 
 					$scope.keys = [ {} ];
 
+					// Method that shows a simple text.
 					$scope.hello = function() {
 						$http.get('UniversalDX/urinterface/test').success(
 								function(data) {
@@ -74,6 +81,8 @@ app
 						});
 					};
 
+					// Method that returns the class of an index if it already
+					// exists.
 					$scope.classify = function() {
 						$http
 								.get(
@@ -99,6 +108,7 @@ app
 								});
 					};
 
+					// Method that classifies an index.
 					$scope.create = function() {
 						$http
 								.post('UniversalDX/urinterface/create/', {
@@ -124,11 +134,9 @@ app
 											} else {
 												var found = false;
 
-												// for existing contact, find
-												// this
-												// contact using id
-												// and update it.
 												for (i in $scope.keys) {
+													// If the key already
+													// exists, we update it.
 													if ($scope.keys[i].key == $scope.object) {
 														$scope.keys[i] = data;
 														found = true;
@@ -136,8 +144,7 @@ app
 												}
 
 												if (!found) {
-													$scope.keys
-															.push(data);
+													$scope.keys.push(data);
 												}
 											}
 										}).error(function(data) {

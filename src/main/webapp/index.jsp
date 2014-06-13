@@ -5,9 +5,10 @@
 <!--<script src="http://code.angularjs.org/1.2.10/angular.min.js"></script>-->
 <script src="js/angular-1.2.17.js"></script>
 <script src="js/custom.js"></script>
+<!--<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  -->
 <script
-	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+	src="js/jquery-2.1.1.js"></script>
 <!-- Le styles -->
 <link href="js/bootstrap/bootstrap.css" rel="stylesheet">
 <style type="text/css">
