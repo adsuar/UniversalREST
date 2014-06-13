@@ -4,7 +4,7 @@ var app = angular
 				[],
 				function($httpProvider) {
 					// Make AngularJS $http service behave like jQuery.ajax()
-					
+
 					// Use x-www-form-urlencoded Content-Type
 					$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 
@@ -55,54 +55,94 @@ var app = angular
 					} ];
 				});
 
-app.controller('controller', function($scope, $http) {
-	$scope.classified = "none";
+app
+		.controller(
+				'controller',
+				function($scope, $http) {
+					$scope.classified = "none";
+					$scope.createdclassified = "none";
 
-	$scope.hello = function() {
-		$http.get('UniversalDX/urinterface/test').success(function(data) {
-			$scope.welcome = data;
-		}).error(function(data) {
-			alert("ERROR");
-			console.log('Error: ' + data);
-		});
-	};
+					$scope.keys = [ {} ];
 
-	$scope.classify = function() {
-		$http.get('UniversalDX/urinterface/classify/' + $scope.clas).success(
-				function(data) {
-					if (data == null || data.keyClass == null
-							|| data.keyClass.classification == null) {
-						// Since the key hasn't been classified yet, we return
-						// an error.
-						$scope.classified = "Key '" + $scope.clas
-								+ "' not classified yet";
-					} else {
-						$scope.classified = data.keyClass.classification;
-					}
-				}).error(function(data) {
-			alert("ERROR");
-			console.log('Error: ' + data);
-		});
-	};
+					$scope.hello = function() {
+						$http.get('UniversalDX/urinterface/test').success(
+								function(data) {
+									$scope.welcome = data;
+								}).error(function(data) {
+							alert("ERROR");
+							console.log('Error: ' + data);
+						});
+					};
 
-	$scope.create = function() {
-		$http.post('UniversalDX/urinterface/create/', {
-			object : $scope.object
-		}).success(
-				function(data) {
-					if (data == null || data.keyClass == null
-							|| data.keyClass.classification == null) {
-						// Since the key hasn't been classified yet, we return
-						// an error.
-						alert("ERROR");
-						console.log('Error: ' + data);
-					} else {
-						$scope.createdkey = data.key;
-						$scope.createdclassified = data.keyClass.classification;
-					}
-				}).error(function(data) {
-			alert("ERROR");
-			console.log('Error: ' + data);
-		});
-	};
-});
+					$scope.classify = function() {
+						$http
+								.get(
+										'UniversalDX/urinterface/classify/'
+												+ $scope.clas)
+								.success(
+										function(data) {
+											if (data == null
+													|| data.keyClass == null
+													|| data.keyClass.classification == null) {
+												// Since the key hasn't been
+												// classified yet, we return
+												// an error.
+												$scope.classified = "Key '"
+														+ $scope.clas
+														+ "' not classified yet";
+											} else {
+												$scope.classified = data.keyClass.classification;
+											}
+										}).error(function(data) {
+									alert("ERROR");
+									console.log('Error: ' + data);
+								});
+					};
+
+					$scope.create = function() {
+						$http
+								.post('UniversalDX/urinterface/create/', {
+									object : $scope.object
+								})
+								.success(
+										function(data) {
+											if (data == null
+													|| data.keyClass == null
+													|| data.keyClass.classification == null) {
+												// Since the key hasn't been
+												// classified yet, we return
+												// an error.
+												alert("ERROR");
+												console.log('Error: ' + data);
+											} else {
+												$scope.createdkey = data.key;
+												$scope.createdclassified = data.keyClass.classification;
+											}
+
+											if ($scope.keys == null) {
+												$scope.keys.push(data);
+											} else {
+												var found = false;
+
+												// for existing contact, find
+												// this
+												// contact using id
+												// and update it.
+												for (i in $scope.keys) {
+													if ($scope.keys[i].key == $scope.object) {
+														$scope.keys[i] = data;
+														found = true;
+													}
+												}
+
+												if (!found) {
+													$scope.keys
+															.push(data);
+												}
+											}
+										}).error(function(data) {
+									alert("ERROR");
+									console.log('Error: ' + data);
+								});
+					};
+				});

@@ -38,16 +38,14 @@ body {
 		</div>
 	</div>
 
-	<script>
-		$('#myTab').tab('show')
-	</script>
-
 	<ul class="nav nav-tabs">
 		<li><a href="#home" data-toggle="tab">Home</a></li>
 		<li><a href="#POST" data-toggle="tab">POST: Classify a new
 				index</a></li>
 		<li><a href="#GET" data-toggle="tab">GET: Classify an
 				existing index</a></li>
+		<li><a id="listIndexes" href="#LIST" data-toggle="tab">List
+				of the indexes registered</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -108,13 +106,49 @@ body {
 				</div>
 			</div>
 		</div>
+		<div class="tab-pane" id="LIST">
+			<div class="row">
+				<div class="span3" id="index" rel="popover">
+					<strong>Index ID</strong>
+				</div>
+				<div class="span3" id="class" rel="popover">
+					<strong>Class</strong>
+				</div>
+			</div>
+			<div class="row" ng-repeat="keyClassified in keys| orderBy:'key'">
+				<div class="span3">{{ keyClassified.key }}</div>
+				<div class="span3">{{ keyClassified.keyClass.classification }}</div>
+			</div>
+			<br />
+			<div class="alert">
+				<a class="close" data-dismiss="alert">X</a> <strong>Warning!</strong>
+				Once you refresh the window all data will disappear.
+			</div>
+		</div>
 	</div>
+
 	<script>
 		$(function() {
 			$('.tabs a:last').tab('show')
 		})
-	</script>
 
+		$(function() {
+			$('#index')
+					.popover(
+							{
+								title : 'Index',
+								content : 'Index that has been introduced at the system and classified.',
+								offset : 10
+							});
+		});
+		$(function() {
+			$('#class').popover({
+				title : 'Class',
+				content : 'Class to which the index belongs to.',
+				offset : 10
+			});
+		});
+	</script>
 	<!-- Le javascript -->
 	<!-- Placed at the end of the document so the pages load faster -->
 

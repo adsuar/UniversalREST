@@ -109,7 +109,57 @@ body {
 				</div>
 			</div>
 		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse"
+					data-parent="#accordion" href="#collapseThree"> List of the
+					indexes registered. </a>
+			</div>
+			<div id="collapseThree" class="accordion-body collapse in">
+				<div class="accordion-inner">
+					<div class="row">
+						<div class="span3" id="index" rel="popover">
+							<strong>Index ID</strong>
+						</div>
+						<div class="span3" id="class" rel="popover">
+							<strong>Class</strong>
+						</div>
+					</div>
+					<div class="row" ng-repeat="keyClassified in keys| orderBy:'key'">
+						<div class="span3">{{ keyClassified.key }}</div>
+						<div class="span3">{{ keyClassified.keyClass.classification
+							}}</div>
+					</div>
+					<br />
+					<div class="alert">
+						<a class="close" data-dismiss="alert">X</a> <strong>Warning!</strong>
+						Once you refresh the window all data will disappear.
+					</div>
+
+				</div>
+			</div>
+		</div>
 	</div>
+
+	<script>
+		$(function() {
+			$('#index')
+					.popover(
+							{
+								title : 'Index',
+								content : 'Index that has been introduced at the system and classified.',
+								offset : 10
+							});
+		});
+		$(function() {
+			$('#class').popover({
+				title : 'Class',
+				content : 'Class to which the index belongs to.',
+				offset : 10
+			});
+		});
+	</script>
+
 
 	<!-- Le javascript -->
 	<!-- Placed at the end of the document so the pages load faster -->
