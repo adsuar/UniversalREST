@@ -1,22 +1,24 @@
-UniversalREST
-=============
+# UniversalREST
 
 Task developed for the job position process. It implements a Java web application exposing a simple REST API.
 
-Requirements
-------------
+### Requirements
 
 - OS: Linux
 - JVM: 1.7
 - Tomcat7
 
-Creation from scratch
----------------------
+### Creation from scratch
 
 In *tools* folder, you can see the createUniversalREST.sh script, that will create a webapp maven application from scratch.
 
-Compilation and Deployment
---------------------------
+### Compilation and Deployment
+
+You have two ways of compiling and deploying the project:
+- Using your own tomcat7
+- Using a tomcat7 instance executed ad-hoc
+
+###### Your own Tomcat7
 
 You have to follow the next steps:
 - mvn clean package
@@ -24,15 +26,24 @@ You have to follow the next steps:
 - Start or restart your tomcat7 instance (for example, with the routine sudo service tomcat7 restart)
 - Go to your web browser and go to the following URL: http://localhost:8080/UniversalREST
 
+###### An ad-hoc Tomcat7 instance
+
+You only need to execute the following code:
+```sh
+$ mvn clean install
+$ mvn tomcat7:run
+```
+
+# Features
+
+### Interface
+
 I've developed two different ways of watching the app:
 - http://localhost:8080/UniversalREST/index.jsp, which is the default one.
 - http://localhost:8080/UniversalREST/accordion.jsp, which uses a different Twitter Bootstrap style.
 
-Features
-========
 
-RESTFul API
------------
+### RESTFul API
 
 I've developed my RESTFul API using Jersey and Jackson so the conversion from Java Objects to JSON ones will be done automatically.
 
@@ -41,8 +52,7 @@ I've developed three different services:
 - UniversalREST/urinterface/classify, a GET service that gets the classify parameter (an integer) and returns the class it's supposed to match with it.
 - UniversalREST/urinterface/create, a POST service that creates the class of an integer (randomly generated) and stores it on memory. If the integer is already stored, nothing has to be done.
 
-AngularJS
----------
+### AngularJS
 
 I've used the following features:
 - Data-Binding: I've played with the possibility of showing in real-time the changes that suffers the data. For example, the *List of indexes registered* changes when new integers are classified.
@@ -50,8 +60,7 @@ I've used the following features:
 - MVC: I've used a controller to solve a problem with the $http.post call and to ease the call to Web Services.
 - Some actions such as ng-repeat (that allow us to execute several times one portion of html code with the data of a complex structure), ng-init (to execute actions when the page is loaded), etc.
 
-Twitter Bootstrap
------------------
+### Twitter Bootstrap
 
 I've used the following features:
 - The grid system although the project is so tiny that we can't see the great power of this tool to organize the screen.
