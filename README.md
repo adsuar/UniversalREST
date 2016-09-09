@@ -22,11 +22,11 @@ You have to follow the next steps:
 - mvn clean package
 - Copy your UniversalREST.war package stored at target folder to your tomcat7 webapps folders (in my case, /var/lib/tomcat7/webapps)
 - Start or restart your tomcat7 instance (for example, with the routine sudo service tomcat7 restart)
-- Go to your web browser and go to the following URL: http://localhost:8080/UnviversalREST
+- Go to your web browser and go to the following URL: http://localhost:8080/UniversalREST
 
 I've developed two different ways of watching the app:
-- http://localhost:8080/UnviversalREST/index.jsp, which is the default one.
-- http://localhost:8080/UnviversalREST/accordion.jsp, which uses a different Twitter Bootstrap style.
+- http://localhost:8080/UniversalREST/index.jsp, which is the default one.
+- http://localhost:8080/UniversalREST/accordion.jsp, which uses a different Twitter Bootstrap style.
 
 Features
 ========
